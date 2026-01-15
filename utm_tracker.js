@@ -10,8 +10,8 @@ function getReferrer() {
     console.log('parsed utmSource:', utmSource, 'ghlId:', ghlId);
 
     try {
-      loader.engine.document.getElementById(123456789).setValue({ value: utmSource });
-      loader.engine.document.getElementById(987654321).setValue({ value: ghlId });
+      loader.engine.document.getElementById(120174307).setValue({ value: utmSource });
+      loader.engine.document.getElementById(120174308).setValue({ value: ghlId });
       console.log('values set into hidden fields');
     } catch (e) {
       console.error('Error setting values:', e);
@@ -20,3 +20,4 @@ function getReferrer() {
 }
 
 document.addEventListener('DOMContentLoaded', getReferrer);
+
