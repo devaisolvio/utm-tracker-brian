@@ -1,16 +1,22 @@
-
 function getReferrer() {
-setTimeout(function() {
-var queryString = window.location.search;
+  setTimeout(function() {
+    console.log('UTM script running');
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
 
-var urlParams = new URLSearchParams(queryString);
-var utmSource = urlParams.get('utm_source');
-var ghlId = urlParams.get('ghl_id');
+    var utmSource = urlParams.get('utm_source');
+    var ghlId     = urlParams.get('ghl_id');
 
+    console.log('parsed utmSource:', utmSource, 'ghlId:', ghlId);
 
-loader.engine.document.getElementById(123456789).setValue({ value: utmSource });
-loader.engine.document.getElementById(987654321).setValue({ value: ghlId });
+    try {
+      loader.engine.document.getElementById(123456789).setValue({ value: utmSource });
+      loader.engine.document.getElementById(987654321).setValue({ value: ghlId });
+      console.log('values set into hidden fields');
+    } catch (e) {
+      console.error('Error setting values:', e);
+    }
+  }, 1000);
+}
 
-}, 1000);}
-window.onclick = getReferrer;
-
+document.addEventListener('DOMContentLoaded', getReferrer);
