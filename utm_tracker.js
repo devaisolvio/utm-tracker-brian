@@ -19,5 +19,7 @@ function getReferrer() {
   }, 1000);
 }
 
+console.log("Added the js");
 document.addEventListener('DOMContentLoaded', getReferrer);
+
 
