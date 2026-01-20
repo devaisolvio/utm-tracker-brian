@@ -14,7 +14,9 @@ function getReferrer() {
       "joe":{"utm_source_form_id":120215730,"ghl_form_id":120215731},
       "johnny":{"utm_source_form_id":120215750,"ghl_form_id":120215751},
       }
-      
+
+     console.log(data[formSource])
+
 
     try {
     let formGhlId = data[formSource].ghl_form_id;
@@ -30,6 +32,7 @@ function getReferrer() {
 
 console.log("Added the js");
 document.addEventListener('DOMContentLoaded', getReferrer);
+
 
 
 
